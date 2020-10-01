@@ -5,6 +5,24 @@ std::vector<double> applyConvolution(std::vector<double> x, std::vector<double> 
 
 	std::vector<double> y;
 
+	std::cout << "x: {";
+
+	for (int i = 0; i < x.size() - 1; i++)
+	{
+		std::cout << x[i] << ", ";
+	}
+
+	std::cout << x[x.size()-1] << "}" << std::endl;
+
+	std::cout << "y: {";
+
+	for (int i = 0; i < w.size() - 1; i++)
+	{
+		std::cout << w[i] << ", ";
+	}
+
+	std::cout << w[w.size()-1] << "}" << std::endl;
+
 	for (int i = 0; i < x.size(); i++) 
 	{
 
