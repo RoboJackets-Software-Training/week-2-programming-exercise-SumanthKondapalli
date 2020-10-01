@@ -14,6 +14,20 @@ void printVector(std::vector<double> vec) {
 
 }
 
+std::vector<double> readInVector(std::string s) {
+	int prev_location = 0;
+	int next_location = 0;
+	std::vector<double> result;
+	while(s.find(',', prev_location) != std::string::npos) {
+		next_location = s.find(',', prev_location);
+		result.push_back(std::stod(s.substr(prev_location, next_location - prev_location)));
+		next_location++;
+		prev_location = next_location;
+	}
+	result.push_back(std::stod(s.substr(prev_location, std::string::npos)));
+	return result;
+}
+
 std::vector<double> applyConvolution(std::vector<double> x, std::vector<double> w, bool pack_with_zeros) {
 
 	std::vector<double> y;

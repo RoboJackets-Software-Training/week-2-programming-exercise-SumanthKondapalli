@@ -4,10 +4,21 @@
 
 int main() {
 
-	std::vector<double> x = {1,2,3,4,5,6,7};
-	std::vector<double> w = {2,5,6};
-	bool pad = true;
+	std::vector<double> x;
+	std::vector<double> w;
+	std::vector<double> y;
+	bool pack_with_zeros = true;
 
-	applyConvolution(x, w, pad);
+	std::string s;
+	std::cin >> s;
+	if(s == "false") {
+		pack_with_zeros = false;
+	}
+	std::cin >> s;
+	x = readInVector(s);
+	std::cin >> s;
+	w = readInVector(s);
+
+	applyConvolution(x, w, pack_with_zeros);
 
 }
